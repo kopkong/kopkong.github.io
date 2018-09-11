@@ -2,7 +2,7 @@
 layout: post
 title:  "Puppeteer 简单教程"
 date:   2018-09-01 20:48:57 +0800
-categories: jekyll update
+categories: javascript
 ---
 
 Github地址：[Puppeteer]
@@ -15,7 +15,7 @@ Github地址：[Puppeteer]
     page.$eval('button[type=submit]', btn => btn.click());
 {% endhighlight %}
 
-启动
+### 第一步：启动
 
 {% highlight javascript %}
     browser = await puppeteer.launch();
@@ -30,7 +30,7 @@ Github地址：[Puppeteer]
 Puppeteer 默认会安装最新版本的chrome，默认的启动选项为headless模式。headless就是没有GUI的Chrome，会在后台使用Blink引擎渲染页面的所有内容，包括执行js、加在css动画等所有（具体看这里[Chrome headless]。
 Puppeteer 也可以选择启动已经安装了的Chrome版本，并且取消headless模式，这样就可以一边跑自动脚本一边观察页面上的变化了。
 
-抓取页面元素
+### 第二步：抓取页面元素
 
 {% highlight javascript %}
     const inputUsername = await page.$('input[name=username]');
@@ -57,6 +57,8 @@ Puppeteer 也可以选择启动已经安装了的Chrome版本，并且取消head
 {% endhighlight %}
 
 等待页面提交、跳转等登录过程完成之后。跳转到外野的论坛地址，然后从页面上抓取当前页面的所有帖子主题并且打印到Console。
+
+
 
 [Puppeteer]: https://github.com/GoogleChrome/puppeteer
 [Chrome headless]: https://developers.google.com/web/updates/2017/04/headless-chrome 
